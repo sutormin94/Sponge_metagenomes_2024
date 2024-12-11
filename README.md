@@ -57,7 +57,8 @@ c) statistical analysis and visualization of ELP counts.
 
 2. **Search for ELPs and analyze**  
    Use `Analyse_ELP_form_MAGs.py` to identify potential ELPs (domains listed in `Additional_data\ELPs_list.tsv`) based on the annotation results, add signalP data (`Additional_data\All_ELPs_found_seq_SignalP6.txt`) and visualize the resulting matrices and distribution.  
-   Provide the script with ELP count files (xlsx) in `Additional_data\ELP_data_all_FL_genomes` for free-living bins and `Additional_data\ELP_data_all_SA_genomes` for sponge-associated bins.
+   Provide the script with ELP count files (xlsx) in `Additional_data\ELP_data_all_FL_genomes` for free-living bins and `Additional_data\ELP_data_all_SA_genomes` for sponge-associated bins and with
+bins parameters (total length/completeness/contamination in `Additional_data\MAGs_and_bins_CheckM.xlsx`) for counts normalization.
 
 These scripts streamline the process of identifying and analyzing ELPs across multiple genomes.
 
