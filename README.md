@@ -1,5 +1,5 @@
 # Sponge_metagenomes_2024
- Scripts used for analysis and visualization of sponge metagenomic data.
+ Scripts created for analysis and visualization of sponge metagenomic data.
  
 ## Preparation of symbiont plots
 
@@ -10,7 +10,7 @@
 
 ### Usage  
 
- Provide OTU table with 16S counts (Additional_data\OTU_counts_and_taxa.xlsx) and a pair of 16S datasets for comparison (e.g., "H. sitiens 2016 1" and "Marine water 2016").
+ Provide OTU table with 16S counts (`Additional_data\OTU_counts_and_taxa.xlsx`) and a pair of 16S datasets for comparison (e.g., "H. sitiens 2016 1" and "Marine water 2016").
 
 
 ## Script for preparation of full-length 16S sequences for multiple alignment and their annotation for iTol
