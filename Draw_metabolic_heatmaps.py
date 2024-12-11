@@ -24,7 +24,7 @@ from Bio import SeqIO, Align, Seq
 #################
 
 # Path to raw data table.
-Input_data_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Amino_acids_and_vitamins\\Amino_acids_and_vitamins.xlsx"
+Input_data_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Amino_acids_and_vitamins\\Amino_acids_vitamins_sec_systems.xlsx"
 
 # Output path.
 Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Amino_acids_and_vitamins\Heatmaps\\"
@@ -166,15 +166,11 @@ def wrapper_func(input_data_path, output_path):
     # Draw heatmap for vitamins transporters.
     draw_heatmap_vit_transp(Input_vit_transp_df, output_path)   
     
-    # Read input data for vitamins transporters.
+    # Read input data for transport and secretion systems.
     Input_transp_sec_df=pd.read_excel(input_data_path, sheet_name="Transport_and_secretion_systems", index_col=0)
     
-    # Draw heatmap for vitamins transporters.
+    # Draw heatmap for transport and secretion systems.
     draw_heatmap_transp_sec(Input_transp_sec_df, output_path)      
-    
-    
-    
-    
     
     return
 

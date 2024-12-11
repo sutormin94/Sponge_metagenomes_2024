@@ -1,5 +1,5 @@
 ###############################################
-##Anastasiia Rusanova, Dmitry Sutormin, 2023##
+##Anastasiia Rusanova, Dmitry Sutormin, 2024##
 ##Calculate fractions of symbiotic OTUs in microbiomes##
 
 #Takes input table with absolute abundances of microbial features (OTU or ASV).
@@ -48,16 +48,20 @@ I_palmata_dict={'Samples' : ['I. palmata 2016 1', 'I. palmata 2016 2', 'I. palma
                 'OTUs' : ['OTU 1']}
 
 def get_mean_rel_freq_and_std(data_dict, sponge_name):
+
     print(f'Working with {sponge_name} data.')
     Sponge_data=table[data_dict['Samples']]
     Total_abs_freq=Sponge_data.sum()
+    
     for OTU in data_dict['OTUs']:
+    
         OTU_abs_freq=Sponge_data.loc[OTU]
         OTU_rel_freq=OTU_abs_freq/Total_abs_freq
         print(f'Relative frequences for {OTU} : {OTU_rel_freq}')
         Mean_OTU_rel_freq=np.mean(OTU_rel_freq)
         STD_OTU_rel_freq=np.std(OTU_rel_freq)
         print(f'Mean realtive frequency for {OTU} : {Mean_OTU_rel_freq} with STD {STD_OTU_rel_freq}')
+    
     return
 
 #H. panicea.

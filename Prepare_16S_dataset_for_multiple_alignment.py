@@ -1,5 +1,5 @@
 ###############################################
-##Anastasiia Rusanova, Dmitry Sutormin, 2023##
+##Anastasiia Rusanova, Dmitry Sutormin, 2024##
 ##Prepare dataset for multiple alignment##
 
 #Takes an input multi-fasta file with sequences collected from different sources: a querry, NCBI nt, NCBI rRNA, SILVA.

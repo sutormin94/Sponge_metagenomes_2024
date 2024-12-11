@@ -2,7 +2,7 @@
 ##Anastasiia Rusanova, Dmitry Sutormin, 2024##
 ##Analyse ELP-domain-containing proteins from bacterial MAGs##
 
-#Takes input from InterProsacn annotation of MAGs and extracts predicted ELP-containing proteins.
+#Takes input from InterProScan annotation of MAGs and extracts predicted ELP-containing proteins.
 ###############################################
 
 #######
@@ -240,7 +240,7 @@ def write_ELP_sequences(Bac_all_MAGs_ELP_seq_dict, output_path):
     return
     
 
-def wrapper_function(elp_def_path, interproscan_path, mgm2_path, output_path):
+def wrapper_function_aggregation(elp_def_path, interproscan_path, mgm2_path, output_path):
     
     # Read ELP definitions file.
     ELP_types_dict=read_elp_def(elp_def_path)
@@ -259,7 +259,7 @@ def wrapper_function(elp_def_path, interproscan_path, mgm2_path, output_path):
     
     return
 
-#wrapper_function(ELP_def_path, Interproscan_path, MGM2_path, Output_path)
+wrapper_function_aggregation(ELP_def_path, Interproscan_path, MGM2_path, Output_path)
 
 
 
@@ -521,7 +521,7 @@ def write_ELPs(MAGs_ELPs_domains_signalP_dict, dataset_name, output_path):
 
 
 
-def wrapper_function_analysis(elps_in_mags_annotation_path, signalP_results_path, output_path):
+def wrapper_function_signalP(elps_in_mags_annotation_path, signalP_results_path, output_path):
     
     # Read ELPs annotation.
     MAGs_ELPs_domains_dict=read_elp_annot(elps_in_mags_annotation_path)
@@ -541,7 +541,7 @@ def wrapper_function_analysis(elps_in_mags_annotation_path, signalP_results_path
     
     return
 
-#wrapper_function_analysis(ELPs_in_MAGs_annotation_path, SignalP_results_path, Output_path)
+wrapper_function_signalP(ELPs_in_MAGs_annotation_path, SignalP_results_path, Output_path)
 
 
 
@@ -552,16 +552,16 @@ def wrapper_function_analysis(elps_in_mags_annotation_path, signalP_results_path
 
 
 # Path to tables with ELP frequences for free-living MAGs.
-ELPs_in_FL_MAGs_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\Output_data_all_FL_genomes\\"
+ELPs_in_FL_MAGs_path="Additional_data\ELP_data_all_FL_genomes\\"
 
 # Path to tables with ELP frequences for sponge-associated MAGs.
-ELPs_in_SA_MAGs_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\Output_data_all_SA_genomes\\"
+ELPs_in_SA_MAGs_path="Additional_data\ELP_data_all_SA_genomes\\"
 
 # Path to CheckM info for bins.
-CheckM_bins_info="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\\MAGs_and_bins_CheckM.xlsx"
+CheckM_bins_info="Additional_data\\MAGs_and_bins_CheckM.xlsx"
 
 # Output path.
-Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\ELP_stat_and_pictures\\"
+Output_path="ELP_stat_and_pictures\\"
 
 
 
@@ -729,7 +729,10 @@ def plot_bins_stats(CheckM_info_df, Sponge_assoc_MAGs, output_path):
 
 
 
-def wrapper_function_ELP_comparison(elps_in_FL_MAGs_path, elps_in_SA_MAGs_path, checkM_bins_info, output_path):
+def wrapper_function_ELP_vis(elps_in_FL_MAGs_path, elps_in_SA_MAGs_path, checkM_bins_info, output_path):
+    
+    if os.path.isdir(output_path)!=True:
+        os.mkdir(output_path)
     
     # Select category of ELPs to compare.
     ELP_cat="All_ELPs_types_genes"
@@ -775,4 +778,4 @@ def wrapper_function_ELP_comparison(elps_in_FL_MAGs_path, elps_in_SA_MAGs_path, 
 
 
 
-wrapper_function_ELP_comparison(ELPs_in_FL_MAGs_path, ELPs_in_SA_MAGs_path, CheckM_bins_info, Output_path)
+wrapper_function_ELP_vis(ELPs_in_FL_MAGs_path, ELPs_in_SA_MAGs_path, CheckM_bins_info, Output_path)

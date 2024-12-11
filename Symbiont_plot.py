@@ -1,5 +1,5 @@
 ###############################################
-##Anastasiia Rusanova, Dmitry Sutormin, 2023##
+##Anastasiia Rusanova, Dmitry Sutormin, 2024##
 ##Symbiont-plot construction##
 
 #Takes input table with absolute abundances of microbial features (OTU or ASV) for 
@@ -24,10 +24,10 @@ import os
 #################
 
 #Path to the working directory.
-path = "C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\\16S_metagenomics\Symbiont_plots\\"
+path = "Additional_data\\"
 
 #Path to a table with relative abundance data.
-table = pd.read_excel(os.path.join(path, 'OTU_taxa.xlsx'), sheet_name='all', header=0, index_col=0)
+table = pd.read_excel(os.path.join(path, 'OTU_counts_and_taxa.xlsx'), sheet_name='all', header=0, index_col=0)
 print(table)
 
 #Dataset_names.
