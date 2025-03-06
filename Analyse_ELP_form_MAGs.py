@@ -19,13 +19,15 @@ import math as math
 import scipy as sp
 import os
 from Bio import SeqIO, Align, Seq
+from pca import pca
+import colourmap
 
 #################
 ### Variables to be defined.
 #################
 
 # Path to ELP definition file.
-ELP_def_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\ELPs_list.tsv"
+ELP_def_path="Additional_data\ELPs_list.tsv"
 
 # Path to folder with InterProScan output.
 Interproscan_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\Pfam_annotation_results\\"
@@ -268,13 +270,13 @@ wrapper_function_aggregation(ELP_def_path, Interproscan_path, MGM2_path, Output_
 ##########
 
 # Path to table with ELP annotation.
-ELPs_in_MAGs_annotation_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\Output_data_all_genomes\\All_ELPs_found_annotation.tsv"
+ELPs_in_MAGs_annotation_path="Additional_data\All_ELPs_found_annotation.tsv"
 
 # Path to SignalP output.
-SignalP_results_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\Output_data_all_genomes\\All_ELPs_found_seq_SignalP6.txt"
+SignalP_results_path="Additional_data\All_ELPs_found_seq_SignalP6.txt"
 
 # Output path.
-Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\ELP_analysis\Output_data_all_genomes\\"
+Output_path="Additional_data\ELP_analysis\\"
 
 
 
@@ -619,6 +621,60 @@ def draw_heatmap_all(ELP_cat, input_df, norm, output_path):
     return
 
 
+#######
+# Run PCA analysis on gene/domain frequencies.
+#######
+
+def draw_PCA_all(ELP_cat, All_source_ELPs_df, norm, Sponge_assoc_MAGs, output_path):
+    
+    model=pca() 
+    results=model.fit_transform(All_source_ELPs_df) 
+    
+    All_genome_names=list(All_source_ELPs_df.index)
+    
+    Genome_names_to_label_ar=[]
+    Genome_colors_to_label_ar=[]
+    Genome_alpha_to_label_ar=[]
+    
+    for genome_name in All_genome_names:
+        
+        if genome_name in Sponge_assoc_MAGs:
+            
+            Genome_names_to_label_ar.append(genome_name.split('_')[2])
+            Genome_colors_to_label_ar.append('black')
+            Genome_alpha_to_label_ar.append(1)
+            
+        else:
+            
+            Genome_names_to_label_ar.append('')
+            Genome_colors_to_label_ar.append('blue')
+            Genome_alpha_to_label_ar.append(0.5) 
+            
+    Genome_names_to_label_ser=np.array(Genome_names_to_label_ar)
+    
+    fig, ax=model.biplot(SPE=True, HT2=True, n_feat=5, labels=Genome_names_to_label_ser, 
+                         alpha=Genome_alpha_to_label_ar, c=Genome_colors_to_label_ar, linewidths=0.2,
+                         legend=False, s=20, dpi=300, grid=False, 
+                         arrowdict={'fontsize': 5}, title=None, fontsize=5)
+    ax.set_title(None)
+    
+    ax.tick_params(axis='both', labelsize=10)
+    
+    xlabel=ax.get_xlabel()
+    ax.set_xlabel(xlabel, fontsize=10)
+    
+    ylabel=ax.get_ylabel()
+    ax.set_ylabel(ylabel, fontsize=10)
+    
+    fig.set_size_inches(3, 3)
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_path, f'{ELP_cat}_All_MAGs_biplot_{norm}.png'), dpi=300)
+    plt.savefig(os.path.join(output_path, f'{ELP_cat}_All_MAGs_biplot_{norm}.svg'), dpi=300)    
+    
+    return
+
+
 def plot_ELP_distrib(FL_freqs, SP_freqs, ELP_cat, ELP_name, norm, output_path):
     
     Full_ELPs_data=FL_freqs+SP_freqs
@@ -735,7 +791,7 @@ def wrapper_function_ELP_vis(elps_in_FL_MAGs_path, elps_in_SA_MAGs_path, checkM_
         os.mkdir(output_path)
     
     # Select category of ELPs to compare.
-    ELP_cat="All_ELPs_types_genes"
+    ELP_cat="All_ELPs_types_domains"
     
     # Read FL data.
     FL_ELPs_df=pd.read_excel(os.path.join(elps_in_FL_MAGs_path, f'{ELP_cat}_counts.xlsx'), sheet_name='Sheet1', header=0, index_col=0)
@@ -751,6 +807,9 @@ def wrapper_function_ELP_vis(elps_in_FL_MAGs_path, elps_in_SA_MAGs_path, checkM_
     norm='frequences'
     All_source_ELPs_df=pd.concat([FL_ELPs_df, SP_MAGs_ELPs_df])
     draw_heatmap_all(ELP_cat, All_source_ELPs_df, norm, output_path)
+    
+    # Run PCA analysis on gene/domain frequencies.
+    draw_PCA_all(ELP_cat, All_source_ELPs_df, norm, Sponge_assoc_MAGs, output_path)
     
     # Calculate statistics for the frequency of ELPs, draw distributions.
     calc_stat_draw_distribs(ELP_cat, FL_ELPs_df, SP_MAGs_ELPs_df, norm, output_path)
@@ -770,6 +829,9 @@ def wrapper_function_ELP_vis(elps_in_FL_MAGs_path, elps_in_SA_MAGs_path, checkM_
     All_source_ELPs_df_norm=All_source_ELPs_df_norm.reindex(List_of_bins)
     norm='normalized'
     draw_heatmap_all(ELP_cat, All_source_ELPs_df_norm, norm, output_path)   
+    
+    # Run PCA analysis on gene/domain frequencies.
+    draw_PCA_all(ELP_cat, All_source_ELPs_df_norm, norm, Sponge_assoc_MAGs, output_path)    
     
     # Calculate statistics for the normalized frequency of ELPs, draw distributions.
     calc_stat_draw_distribs(ELP_cat, FL_ELPs_df_norm, SP_MAGs_ELPs_df_norm, norm, output_path)    

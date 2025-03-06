@@ -2,7 +2,8 @@
 ##Anastasiia Rusanova, Dmitry Sutormin, 2024##
 ##Trim gff and fasta files for visualization in clinker##
 
-#Takes input from InterProsacn annotation of MAGs and extracts predicted ELP-containing proteins.
+#Takes gff3 file with a gene cluster of interest and a corresponding fasta as input, 
+#converts nucleotide coordinates into coordinates relative to the cluster start position.
 ###############################################
 
 #######
