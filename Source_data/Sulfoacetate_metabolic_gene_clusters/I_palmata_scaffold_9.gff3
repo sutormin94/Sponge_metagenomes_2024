@@ -1,0 +1,20 @@
+##gff-version 3
+
+##sequence-region I_palmata_OTU_1 1 60642
+I_palmata_OTU_1	GeneMark.hmm2	gene	53074	53733	.	+	.	ID=gene_1522;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	53074	53733	32.32	+	0	ID=1522; Parent=gene_1522; gene_type=bacteria; gc=44; length=660;
+I_palmata_OTU_1	GeneMark.hmm2	gene	53747	54871	.	+	.	ID=gene_1523;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	53747	54871	74.22	+	0	ID=1523; Parent=gene_1523; gene_type=bacteria; gc=35; length=1125;
+I_palmata_OTU_1	GeneMark.hmm2	gene	54912	55682	.	+	.	ID=gene_1524;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	54912	55682	73.11	+	0	ID=1524; Parent=gene_1524; gene_type=bacteria; gc=38; length=771;
+I_palmata_OTU_1	GeneMark.hmm2	gene	55722	55913	.	+	.	ID=gene_1525;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	55722	55913	7.74	+	0	ID=1525; Parent=gene_1525; gene_type=bacteria; gc=44; length=192;
+I_palmata_OTU_1	GeneMark.hmm2	gene	56193	57170	.	+	.	ID=gene_1526;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	56193	57170	69.97	+	0	ID=1526; Parent=gene_1526; gene_type=bacteria; gc=46; length=978;
+I_palmata_OTU_1	GeneMark.hmm2	gene	57249	58652	.	+	.	ID=gene_1527;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	57249	58652	99.92	+	0	ID=1527; Parent=gene_1527; gene_type=bacteria; gc=47; length=1404;
+I_palmata_OTU_1	GeneMark.hmm2	gene	58649	60166	.	+	.	ID=gene_1528;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	58649	60166	103.98	+	0	ID=1528; Parent=gene_1528; gene_type=bacteria; gc=44; length=1518;
+I_palmata_OTU_1	GeneMark.hmm2	gene	60209	60640	.	-	.	ID=gene_1529;
+I_palmata_OTU_1	GeneMark.hmm2	CDS	60209	60640	10.44	-	0	ID=1529; Parent=gene_1529; gene_type=bacteria; partial=01; gc=49; length=432;
+# I_palmata_OTU_1	total_logodd	3590.73	average_length	802	average_density	1.15

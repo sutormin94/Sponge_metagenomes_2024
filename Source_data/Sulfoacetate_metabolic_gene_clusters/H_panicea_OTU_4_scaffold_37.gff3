@@ -1,0 +1,21 @@
+##gff-version 3
+# GeneMark.hmm-2 prokaryotic version: 1.23
+# File with sequence: /home/lam16/Genomes_final/Compare/H_panicea_Amylibacter/H_panicea_Amylibacter_sp.fasta
+# File with MetaGeneMark parameters: /opt/MetaGeneMark-2/src/mgm2_11.mod
+# translation table: 11
+# output date start: Sun Jan 28 01:36:38 2024
+
+##sequence-region H_panicea_OTU_4 1 8954
+H_panicea_OTU_4	GeneMark.hmm2	gene	3	452	.	+	.	ID=gene_1341;
+H_panicea_OTU_4	GeneMark.hmm2	CDS	3	452	28.49	+	0	ID=1341; Parent=gene_1341; gene_type=bacteria; partial=10; gc=46; length=450;
+H_panicea_OTU_4	GeneMark.hmm2	gene	495	1463	.	+	.	ID=gene_1342;
+H_panicea_OTU_4	GeneMark.hmm2	CDS	495	1463	81.55	+	0	ID=1342; Parent=gene_1342; gene_type=bacteria; gc=50; length=969;
+H_panicea_OTU_4	GeneMark.hmm2	gene	1545	2951	.	+	.	ID=gene_1343;
+H_panicea_OTU_4	GeneMark.hmm2	CDS	1545	2951	82.47	+	0	ID=1343; Parent=gene_1343; gene_type=bacteria; gc=53; length=1407;
+H_panicea_OTU_4	GeneMark.hmm2	gene	2948	4465	.	+	.	ID=gene_1344;
+H_panicea_OTU_4	GeneMark.hmm2	CDS	2948	4465	70.62	+	0	ID=1344; Parent=gene_1344; gene_type=bacteria; gc=53; length=1518;
+H_panicea_OTU_4	GeneMark.hmm2	gene	4560	7751	.	+	.	ID=gene_1345;
+H_panicea_OTU_4	GeneMark.hmm2	CDS	4560	7751	239.40	+	0	ID=1345; Parent=gene_1345; gene_type=bacteria; gc=40; length=3192;
+H_panicea_OTU_4	GeneMark.hmm2	gene	7844	8953	.	+	.	ID=gene_1346;
+H_panicea_OTU_4	GeneMark.hmm2	CDS	7844	8953	67.18	+	0	ID=1346; Parent=gene_1346; gene_type=bacteria; partial=01; gc=55; length=1110;
+# H_panicea_OTU_4	total_logodd	561.381	average_length	1441	average_density	0.67

@@ -26,13 +26,13 @@ from Bio import SeqIO, Align, Seq
 #################
 
 # Path to initial gff file.
-Path_to_gff="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Sulfoacetate_clusters\\to_trimm\I_palmata_scaffold_9.gff3"
+Path_to_gff="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Sulfoacetate_metabolic_gene_clusters\I_palmata_scaffold_9.gff3"
 
 # Path to initial fasta file.
-Path_to_fasta="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Sulfoacetate_clusters\\to_trimm\I_palmata_scaffold_9.fasta"
+Path_to_fasta="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Sulfoacetate_metabolic_gene_clusters\I_palmata_scaffold_9.fasta"
 
 # Output path.
-Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Sulfoacetate_clusters\\to_trimm\\"
+Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Sulfoacetate_metabolic_gene_clusters\\"
 
 
 

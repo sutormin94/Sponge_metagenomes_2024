@@ -1,0 +1,32 @@
+##gff-version 3
+##sequence-region H_sitiens_OTU_3 1 14501
+H_sitiens_OTU_3	GeneMark.hmm2	gene	150	1448	.	+	.	ID=gene_287;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	150	1448	104.96	+	0	ID=287; Parent=gene_287; gene_type=bacteria; gc=48; length=1299;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	1500	2969	.	-	.	ID=gene_288;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	1500	2969	98.44	-	0	ID=288; Parent=gene_288; gene_type=bacteria; gc=49; length=1470;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	3403	3597	.	+	.	ID=gene_289;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	3403	3597	8.00	+	0	ID=289; Parent=gene_289; gene_type=bacteria; gc=46; length=195;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	4124	4309	.	+	.	ID=gene_290;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	4124	4309	3.72	+	0	ID=290; Parent=gene_290; gene_type=bacteria; gc=45; length=186;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	4828	5016	.	+	.	ID=gene_291;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	4828	5016	1.78	+	0	ID=291; Parent=gene_291; gene_type=bacteria; gc=48; length=189;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	5238	5405	.	-	.	ID=gene_292;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	5238	5405	2.13	-	0	ID=292; Parent=gene_292; gene_type=archaea; gc=50; length=168;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	5516	5704	.	+	.	ID=gene_293;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	5516	5704	4.74	+	0	ID=293; Parent=gene_293; gene_type=bacteria; gc=45; length=189;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	5937	6953	.	+	.	ID=gene_294;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	5937	6953	97.21	+	0	ID=294; Parent=gene_294; gene_type=bacteria; gc=51; length=1017;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	7125	7655	.	+	.	ID=gene_295;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	7125	7655	43.08	+	0	ID=295; Parent=gene_295; gene_type=bacteria; gc=45; length=531;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	7695	9167	.	+	.	ID=gene_296;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	7695	9167	137.15	+	0	ID=296; Parent=gene_296; gene_type=bacteria; gc=52; length=1473;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	9188	10609	.	+	.	ID=gene_297;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	9188	10609	114.91	+	0	ID=297; Parent=gene_297; gene_type=bacteria; gc=49; length=1422;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	10669	11802	.	+	.	ID=gene_298;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	10669	11802	105.00	+	0	ID=298; Parent=gene_298; gene_type=bacteria; gc=53; length=1134;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	11799	12668	.	+	.	ID=gene_299;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	11799	12668	58.39	+	0	ID=299; Parent=gene_299; gene_type=bacteria; gc=53; length=870;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	12712	13608	.	-	.	ID=gene_300;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	12712	13608	62.71	-	0	ID=300; Parent=gene_300; gene_type=bacteria; gc=51; length=897;
+H_sitiens_OTU_3	GeneMark.hmm2	gene	13629	14351	.	-	.	ID=gene_301;
+H_sitiens_OTU_3	GeneMark.hmm2	CDS	13629	14351	44.01	-	0	ID=301; Parent=gene_301; gene_type=bacteria; gc=50; length=723;

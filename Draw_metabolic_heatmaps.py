@@ -24,10 +24,10 @@ from Bio import SeqIO, Align, Seq
 #################
 
 # Path to raw data table.
-Input_data_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Amino_acids_and_vitamins\\Amino_acids_vitamins_sec_systems.xlsx"
+Input_data_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Amino_acid_and_vitamin_biosynthetic_pw_heatmaps\\Amino_acids_vitamins_sec_systems.xlsx"
 
 # Output path.
-Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Metabolism_analysis\Amino_acids_and_vitamins\Heatmaps\\"
+Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Amino_acid_and_vitamin_biosynthetic_pw_heatmaps\\"
 
 
 

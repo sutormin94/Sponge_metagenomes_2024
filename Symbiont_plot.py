@@ -24,10 +24,10 @@ import os
 #################
 
 #Path to the working directory.
-path = "Additional_data\\"
+path = "Source_data\\"
 
 #Path to a table with relative abundance data.
-table = pd.read_excel(os.path.join(path, 'OTU_counts_and_taxa.xlsx'), sheet_name='all', header=0, index_col=0)
+table = pd.read_excel(os.path.join(path, 'WSBS_dataset_OTU_counts_and_taxonomy.xlsx'), sheet_name='all', header=0, index_col=0)
 print(table)
 
 #Dataset_names.
@@ -165,5 +165,5 @@ plt.tight_layout()
 plt.show()
 
 
-fig.savefig(os.path.join(path, "symbiont_plots_tables", f'{image_name}.svg'), dpi=600)
-fig.savefig(os.path.join(path, "symbiont_plots_tables", f'{image_name}.png'), dpi=600)
+fig.savefig(os.path.join(path, "Symbiont_plots", f'{image_name}.svg'), dpi=600)
+fig.savefig(os.path.join(path, "Symbiont_plots", f'{image_name}.png'), dpi=600)

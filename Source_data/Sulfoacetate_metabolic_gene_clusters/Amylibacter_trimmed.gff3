@@ -1,0 +1,20 @@
+##gff-version 3
+##sequence-region OY365741.1 1 18170
+OY365741.1	GeneMark.hmm2	gene	150	3110	.	+	.	ID=1345;
+OY365741.1	GeneMark.hmm2	CDS	150	3110	162.26	+	0	ID=1345; Parent=1345; type=bacteria; gc=48; length=2961;
+OY365741.1	GeneMark.hmm2	gene	3390	10019	.	+	.	ID=1346;
+OY365741.1	GeneMark.hmm2	CDS	3390	10019	225.06	+	0	ID=1346; Parent=1346; type=bacteria; gc=50; length=6630;
+OY365741.1	GeneMark.hmm2	gene	10119	11636	.	-	.	ID=1347;
+OY365741.1	GeneMark.hmm2	CDS	10119	11636	70.86	-	0	ID=1347; Parent=1347; type=bacteria; gc=53; length=1518;
+OY365741.1	GeneMark.hmm2	gene	11633	13039	.	-	.	ID=1348;
+OY365741.1	GeneMark.hmm2	CDS	11633	13039	87.23	-	0	ID=1348; Parent=1348; type=bacteria; gc=54; length=1407;
+OY365741.1	GeneMark.hmm2	gene	13133	14098	.	-	.	ID=1349;
+OY365741.1	GeneMark.hmm2	CDS	13133	14098	83.62	-	0	ID=1349; Parent=1349; type=bacteria; gc=50; length=966;
+OY365741.1	GeneMark.hmm2	gene	14144	14599	.	-	.	ID=1350;
+OY365741.1	GeneMark.hmm2	CDS	14144	14599	23.01	-	0	ID=1350; Parent=1350; type=bacteria; gc=45; length=456;
+OY365741.1	GeneMark.hmm2	gene	14596	16104	.	-	.	ID=1351;
+OY365741.1	GeneMark.hmm2	CDS	14596	16104	95.00	-	0	ID=1351; Parent=1351; type=bacteria; gc=53; length=1509;
+OY365741.1	GeneMark.hmm2	gene	16532	17473	.	+	.	ID=1352;
+OY365741.1	GeneMark.hmm2	CDS	16532	17473	66.00	+	0	ID=1352; Parent=1352; type=bacteria; gc=51; length=942;
+OY365741.1	GeneMark.hmm2	gene	17481	18020	.	-	.	ID=1353;
+OY365741.1	GeneMark.hmm2	CDS	17481	18020	42.80	-	0	ID=1353; Parent=1353; type=bacteria; gc=50; length=540;

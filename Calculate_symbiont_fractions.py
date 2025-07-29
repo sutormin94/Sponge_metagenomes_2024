@@ -24,10 +24,10 @@ import os
 #################
 
 #Path to the working directory.
-path = "C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\\16S_metagenomics\Symbiont_plots\\"
+path = "C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Symbiont_plots\\"
 
 #Path to a table with relative abundance data.
-table = pd.read_excel(os.path.join(path, 'OTU_taxa.xlsx'), sheet_name='all', header=0, index_col=0)
+table = pd.read_excel(os.path.join(path, 'WSBS_dataset_OTU_counts_and_taxonomy.xlsx'), sheet_name='all', header=0, index_col=0)
 print(table)
 
 H_panicea_dict={'Samples' : ['H. panicea 2016 1', 'H. panicea 2016 2', 
