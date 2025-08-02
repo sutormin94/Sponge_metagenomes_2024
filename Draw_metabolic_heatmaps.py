@@ -20,16 +20,15 @@ import os
 from Bio import SeqIO, Align, Seq
 
 #################
+### Analysis of amino acid and vitamins biosynthetic pathways and corresponding transporters.
 ### Variables to be defined.
 #################
 
 # Path to raw data table.
-Input_data_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Amino_acid_and_vitamin_biosynthetic_pw_heatmaps\\Amino_acids_vitamins_sec_systems.xlsx"
+Input_data_aa_vit_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Amino_acid_and_vitamin_biosynthetic_pw_heatmaps\\SAB_MAGs_amino_acids_vitamins_sec_systems_source_data.xlsx"
 
 # Output path.
-Output_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Amino_acid_and_vitamin_biosynthetic_pw_heatmaps\\"
-
-
+Output_path_aa_vit="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\Amino_acid_and_vitamin_biosynthetic_pw_heatmaps\\"
 
 
 def draw_heatmap_aa(input_df, output_path):
@@ -140,7 +139,7 @@ def draw_heatmap_transp_sec(input_df, output_path):
     return
 
 
-def wrapper_func(input_data_path, output_path):
+def wrapper_func_aa_vit(input_data_path, output_path):
     
     # Read input data for amino acids biosynthesis.
     Input_aa_df=pd.read_excel(input_data_path, sheet_name="KEGG_aa_symb_strains_simpl", index_col=0)
@@ -175,4 +174,81 @@ def wrapper_func(input_data_path, output_path):
     return
 
 
-wrapper_func(Input_data_path, Output_path)
+wrapper_func_aa_vit(Input_data_aa_vit_path, Output_path_aa_vit)
+
+
+
+
+
+#################
+### Analysis of general metabolism and sulfur transformation pathways.
+### Variables to be defined.
+#################
+
+# Path to raw data table.
+Input_data_gen_sulf_path="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\General_and_sulfur_pw_heatmaps\\SAB_MAGs_general_metabolism_completeness_source_data.xlsx"
+
+# Output path.
+Output_path_gen_sulf="C:\\Users\sutor\OneDrive\ThinkPad_working\Sutor\Science\Spongy\Scripts\Sponge_metagenomes_2024\Source_data\General_and_sulfur_pw_heatmaps\\"
+
+
+def draw_heatmap_gen(input_df, output_path):
+    
+    fig=plt.figure(figsize=(6,10), dpi=300)
+    ax=fig.add_subplot(111)
+    
+    ax=sb.heatmap(input_df, annot=True, fmt=".1f", annot_kws={'fontsize' : 8, 'fontweight' : 'bold'}, linewidth=0.3, 
+                  cbar_kws={'shrink' : 0.3, 'aspect' : 10}, cmap='Blues', square=True, xticklabels=True, yticklabels=True, ax=ax)
+    cbar=ax.collections[0].colorbar
+    cbar.ax.tick_params(labelsize=13)    
+    ax.tick_params(axis='x', labelsize=15, rotation=90)
+    ax.tick_params(axis='y', labelsize=20)
+    ax.set_ylabel('Biosynthetic pathway', fontsize=20) 
+    ax.xaxis.tick_top()    
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_path, 'General_metabolism_heatmap.png'), dpi=300)
+    plt.savefig(os.path.join(output_path, 'General_metabolism_heatmap.svg'), dpi=300)
+    
+    return
+
+
+def draw_heatmap_sulf(input_df, output_path):
+    
+    fig=plt.figure(figsize=(6,4), dpi=300)
+    ax=fig.add_subplot(111)
+    
+    ax=sb.heatmap(input_df, annot=True, fmt=".1f", annot_kws={'fontsize' : 8, 'fontweight' : 'bold'}, linewidth=0.3, 
+                  cbar_kws={'shrink' : 0.3, 'aspect' : 10}, cmap='Blues', square=True, xticklabels=True, yticklabels=True, ax=ax)
+    cbar=ax.collections[0].colorbar
+    cbar.ax.tick_params(labelsize=13)    
+    ax.tick_params(axis='x', labelsize=15, rotation=90)
+    ax.tick_params(axis='y', labelsize=20)
+    ax.set_ylabel('Biosynthetic pathway', fontsize=20) 
+    ax.xaxis.tick_top()    
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_path, 'Sulfur_transformations_heatmap.png'), dpi=300)
+    plt.savefig(os.path.join(output_path, 'Sulfur_transformations_heatmap.svg'), dpi=300)
+    
+    return
+
+
+def wrapper_func_gen_sulf(input_data_path, output_path):
+    
+    # Read input data for general metabolism pathways.
+    Input_gen_df=pd.read_excel(input_data_path, sheet_name="General_metabolism", index_col=0)
+    
+    # Draw heatmap for general metabolism pathways.
+    draw_heatmap_gen(Input_gen_df, output_path)
+    
+    # Read input data for sulfur transformation pathways.
+    Input_sulf_df=pd.read_excel(input_data_path, sheet_name="Sulfur_pathways", index_col=0)    
+    
+    # Draw heatmap for sulfur transformation pathways.
+    draw_heatmap_sulf(Input_sulf_df, output_path)    
+    
+    return
+
+
+wrapper_func_gen_sulf(Input_data_gen_sulf_path, Output_path_gen_sulf)

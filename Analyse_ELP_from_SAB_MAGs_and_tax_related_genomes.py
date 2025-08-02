@@ -18,6 +18,7 @@ import scipy as sp
 from pca import pca
 from sklearn.decomposition import PCA as sklearnPCA
 
+
 # -------------------- Parameters --------------------
 ELP_folder_path = "C:\\Users\\sutor\\OneDrive\\ThinkPad_working\\Sutor\\Science\\Spongy\\Scripts\\Sponge_metagenomes_2024\\Source_data\\ELPs_in_SAB_MAGS_and_related_species\\"  # Set this to the folder containing your 4 Excel files
 
@@ -86,15 +87,12 @@ def norm_ELP_counts(elp_df_sub, checkm_df, heatmap_cols):
     return normed
 
 
-import seaborn as sb
-import matplotlib.pyplot as plt
-import os
-
 def draw_heatmap(input_df, row_colors, title, norm, output_path):
     """
     Plot heatmap with seaborn clustermap, with colored rows by group.
     Clustering disabled to preserve ordering.
     """
+
     cg = sb.clustermap(
         input_df,
         row_colors=row_colors,
